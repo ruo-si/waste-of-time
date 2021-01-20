@@ -9,7 +9,7 @@ import ProgressBar from "../components/PointTimeline";
 // import Recycle from "../components/RecycleLogo";
 
 
-function Dashboard({ status, username, highScore, score }) {
+function Dashboard(props) {
 
 	// Setting our component's initial state
 	return (
@@ -19,8 +19,8 @@ function Dashboard({ status, username, highScore, score }) {
 				justifyContent: "center",
 				alignItems: "center",
 				fontcolor: "white",
-			}}>Hello,  {username}!</h1>
-			<ProgressBar />
+			}}>Hello,  {props.username}!</h1>
+			<ProgressBar user={props} />
 
 		</div>
 	)
