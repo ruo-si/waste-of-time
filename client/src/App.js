@@ -57,7 +57,15 @@ function App() {
           <Route
             exact
             path='/Login'
-            component={Login}
+            render={props => (
+              <Login
+                {...props}
+                authenticate={authenticate}
+                user={userState}
+                setUserState={setUserState}
+              />
+            )}
+
           />
           <Route
             exact
