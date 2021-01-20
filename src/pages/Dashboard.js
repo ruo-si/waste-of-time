@@ -5,7 +5,7 @@ import React, { useState, useEffect, useRef } from "react";
 // import { Col, Row } from "../components/Grid";
 // import { Table, Tr, Td } from "../components/Table";
 // import { ForwardRefInput, FormBtn } from "../components/Form";
-// import ProgressBar from "../components/PointTimeline";
+import ProgressBar from "../components/PointTimeline";
 // import Recycle from "../components/RecycleLogo";
 
 
@@ -20,7 +20,7 @@ function Dashboard({ status, username, highScore, score }) {
 				alignItems: "center",
 				fontcolor: "white",
 			}}>Hello,  {username}!</h1>
-			{/* <ProgressBar /> */}
+			<ProgressBar />
 
 		</div>
 	)
