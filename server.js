@@ -29,7 +29,7 @@ app.use(passport.session());
 app.use(routes);
 
 // Connect to the Mongo DB
-mongoose.connect(process.env.ATLAS_URL || "mongodb://localhost/Project-3", mongoOptions);
+mongoose.connect(process.env.ATLAS_URL || "mongodb://localhost/waste-of-time", mongoOptions);
 
 // Start the API server
 app.listen(PORT, function () {
