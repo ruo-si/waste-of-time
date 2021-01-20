@@ -28,7 +28,7 @@ app.use(passport.session());
 // Add routes, both API and view
 app.use(routes);
 
-// Connect to the Mongo DB
+// Connect to the Mongo DB - waste-of-time
 mongoose.connect(process.env.ATLAS_URL || "mongodb://localhost/waste-of-time", mongoOptions);
 
 // Start the API server
