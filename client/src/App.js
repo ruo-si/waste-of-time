@@ -33,7 +33,7 @@ function App() {
       })
       .catch((err) => console.log('registered user:', err.response));
   }
-
+  console.log(userState)
   return (
     <Router>
       <Head />

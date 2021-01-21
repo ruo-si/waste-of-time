@@ -26,10 +26,11 @@ class Login extends Component {
 
   handleFormSubmit = event => {
     event.preventDefault();
-    if (this.state.email && this.state.password) {
+    if (this.state.email && this.state.password.name) {
       userAPI.loginUser({
-        email: this.state.email,
-        password: this.state.password
+        email: this.state.email.name,
+        password: this.state.password,
+        name: this.state.name,
       })
         .then(res => {
           if (res.status === 200) {
@@ -47,16 +48,22 @@ class Login extends Component {
           <Col size="12">
             <form>
               <Input
+                value={this.state.name}
+                onChange={this.handleInputChange}
+                name="name"
+                placeholder="Name"
+              />
+              <Input
                 value={this.state.email}
                 onChange={this.handleInputChange}
                 name="email"
-                placeholder="email (required)"
+                placeholder="Email"
               />
               <Input
                 value={this.state.password}
                 onChange={this.handleInputChange}
                 name="password"
-                placeholder="(required)"
+                placeholder="Password"
                 type="password"
               />
 

@@ -8,6 +8,12 @@ const UserSchema = new mongoose.Schema({
     required: true,
     trim: true
   },
+  name: {
+    type: String,
+    unique: true,
+    required: true,
+    trim: true
+  },
   username: {
     required: true,
     type: String,
@@ -17,7 +23,7 @@ const UserSchema = new mongoose.Schema({
     type: String,
     required: true,
   },
-  score: {
+  gameScore: {
     type: Number,
     trim: true,
   },

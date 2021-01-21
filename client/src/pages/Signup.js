@@ -1,21 +1,22 @@
 import React, { Component } from "react";
 
 import userAPI from "../utils/userAPI";
-import {  Redirect, Link } from "react-router-dom";
+import { Redirect, Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
 import { Input, FormBtn } from "../components/Form";
 
 class Signup extends Component {
   state = {
-    email: "1@1",
-    username: "one",
-    password: "1",
-    passwordConf: "1"
+    email: "Email",
+    username: "Username",
+    password: "",
+    passwordConf: "",
+    name: ""
   };
 
   componentDidMount() {
   }
-  
+
   handleInputChange = event => {
     const { name, value } = event.target;
     this.setState({
@@ -27,6 +28,7 @@ class Signup extends Component {
     event.preventDefault();
     if (this.state.email && this.state.password) {
       userAPI.signup({
+        name: this.state.name,
         username: this.state.username,
         email: this.state.email,
         password: this.state.password,
@@ -34,7 +36,7 @@ class Signup extends Component {
 
       })
         .then(res => {
-          if(res.status === 200 ){
+          if (res.status === 200) {
             this.props.authenticate();
             return <Redirect to="/comments" />
           }
@@ -48,13 +50,19 @@ class Signup extends Component {
       <Container fluid>
         <Row>
           <Col size="12">
- 
+
             <form>
               <Input
                 value={this.state.username}
                 onChange={this.handleInputChange}
                 name="username"
-                placeholder="username (required)"
+                placeholder="username"
+              />
+              <Input
+                value={this.state.name}
+                onChange={this.handleInputChange}
+                name="name"
+                placeholder="Name"
               />
               <Input
                 value={this.state.email}
@@ -66,17 +74,17 @@ class Signup extends Component {
                 value={this.state.password}
                 onChange={this.handleInputChange}
                 name="password"
-                placeholder="(required)"
-                type="password"
+                placeholder="Password"
+                type="Confirm Password"
               />
               <Input
                 value={this.state.passwordConf}
                 onChange={this.handleInputChange}
                 name="passwordConf"
-                placeholder="(required)"
+                placeholder="Confirm Password"
                 type="password"
               />
-              
+
               <FormBtn
                 // disabled={!(this.state.email && this.state.password)}
                 onClick={this.handleFormSubmit}
@@ -84,14 +92,14 @@ class Signup extends Component {
                 signup
               </FormBtn>
               <Link to="/">
-               <FormBtn> Login </FormBtn>
-             </Link>
+                <FormBtn> Login </FormBtn>
+              </Link>
             </form>
           </Col>
-          
+
         </Row>
         {/* redirect on authenticated */}
-        {this.props.authenticated ? <Redirect to='/Dashboard'/>: <div></div>}
+        {this.props.authenticated ? <Redirect to='/Dashboard' /> : <div></div>}
 
 
       </Container>
