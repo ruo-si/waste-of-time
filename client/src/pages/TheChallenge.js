@@ -68,6 +68,7 @@ function Game() {
    
            </div>
        );
+
 };
 
 
