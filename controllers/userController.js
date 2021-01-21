@@ -12,7 +12,8 @@ module.exports = {
          comments: req.user.comments,
          status: req.user.status,
          highScore: req.user.highScore,
-         score: req.user.score
+         score: req.user.score,
+         name: req.user.name
       });
    },
 
@@ -24,6 +25,7 @@ module.exports = {
          username: req.body.username,
          email: req.body.email,
          password: req.body.password,
+         name: req.body.name,
          status: null,
          highScore: 0,
          score: 0,
@@ -54,7 +56,8 @@ module.exports = {
             comments: req.user.comments,
             status: req.user.status,
             highScore: req.user.highScore,
-            score: req.user.score
+            score: req.user.score,
+            name: req.user.name
          })
    }
 }

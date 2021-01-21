@@ -20,7 +20,7 @@ function Dashboard(props) {
 				justifyContent: "center",
 				alignItems: "center",
 				fontcolor: "white",
-			}}>Hello,  {props.username}!</h1>
+			}}>Hello,  {props.name}!</h1>
 			<ProgressBar user={props} />
 			<PointText />
 
