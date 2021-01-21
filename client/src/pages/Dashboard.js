@@ -7,6 +7,8 @@ import React, { useState, useEffect, useRef } from "react";
 // import { ForwardRefInput, FormBtn } from "../components/Form";
 import ProgressBar from "../components/PointTimeline";
 import PointText from "../components/PointText";
+import TwitterBtn from "../components/TwitterBtn";
+import FacebookBtn from "../components/FacebookBtn/";
 // import Recycle from "../components/RecycleLogo";
 
 
@@ -23,6 +25,8 @@ function Dashboard(props) {
 			}}>Hello,  {props.name}!</h1>
 			<ProgressBar user={props} />
 			<PointText />
+			<TwitterBtn />
+			<FacebookBtn />
 
 		</div>
 	)
