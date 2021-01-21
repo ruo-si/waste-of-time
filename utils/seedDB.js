@@ -12,11 +12,12 @@ mongoose.connect(process.env.ATLAS_URL || "mongodb://localhost/waste-of-time",
 const userSeed =
 {
    username: "Admin",
+   name: "Lilly",
    email: "admin@contact.us",
    password: "1",
    score: 150,
    status: "second tier",
-   highScore: 180,
+   gameScore: 180,
 }
    ;
 const commentsSeeds = [
