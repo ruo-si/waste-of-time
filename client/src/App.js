@@ -10,7 +10,7 @@ import Head from "./components/Head";
 import userAPI from "./utils/userAPI";
 // import ProtectedRoute from "./components/ProtectedRoute";
 import Home from "./pages/Home";
-import TheScene from "./pages/TheScene";
+// import TheScene from "./pages/TheScene";
 import TheChallenge from "./pages/TheChallenge";
 import Dashboard from "./pages/Dashboard";
 
@@ -40,24 +40,17 @@ function App() {
       <Container>
         <Switch>
           <Route
-            exact
-            path='/'
+            exact path='/'
             component={Home}
           />
           <Route
-            exact
-            path='/TheScene'
-            component={TheScene}
-          />
-          <Route
-            exact
-            path='/TheChallenge'
+            exact path='/TheChallenge'
             component={TheChallenge}
           />
           <Route
-            exact
-            path='/Login'
+            exact path='/Login'
             render={props => (
+
               <Login
                 {...props}
                 authenticate={authenticate}
@@ -68,9 +61,9 @@ function App() {
 
           />
           <Route
-            exact
-            path='/signup'
+            exact path='/signup'
             render={props => (
+
               <Signup
                 {...props}
                 authenticate={authenticate}
@@ -79,15 +72,25 @@ function App() {
             )}
           />
           <Route exact path={["/", "/Dashboard"]}>
+            
             <Dashboard {...userState} />
+            
           </Route>
+
           <Route exact path='/Dashboard' >
+
             <Dashboard {...userState} />
+
           </Route>
+
           <Route component={NoMatch} />
+
         </Switch>
+
       </Container>
+
       {userState.email ? <Redirect to="/Dashboard" /> : <></>}
+      
     </Router>
   );
 }

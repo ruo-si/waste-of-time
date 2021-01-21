@@ -15,42 +15,42 @@ const userSeed =
    name: "Lilly",
    email: "admin@contact.us",
    password: "1",
-   score: 150,
+   highScore: 150,
    status: "second tier",
    gameScore: 180,
 }
-   ;
-const commentsSeeds = [
-   {
-      body: "🚀 initial seed",
-      username: "Admin"
-   },
-   {
-      body: "👾 another",
-      username: "Admin"
-   },
+//    ;
+// const commentsSeeds = [
+//    {
+//       body: "🚀 initial seed",
+//       username: "Admin"
+//    },
+//    {
+//       body: "👾 another",
+//       username: "Admin"
+//    },
 
-];
+// ];
 
-// remove all comments
-db.Comment.deleteMany({})
-   // remove all users
-   .then(() => db.User.deleteMany({}))
-   // add user
-   .then(() => db.User.create(userSeed))
-   // add comments seeds
-   .then((user) => db.Comment.create(commentsSeeds[0])
-      // add comment ref to user
-      .then(({ _id }) => db.User.findOneAndUpdate({ _id: user._id }, { $push: { comments: _id } }, { new: true }))
-   )
-   .then((user) => db.Comment.create(commentsSeeds[1])
-      // add comment ref to user
-      .then(({ _id }) => db.User.findOneAndUpdate({ _id: user._id }, { $push: { comments: _id } }, { new: true }))
-   )
-   .then(() => {
-      process.exit(0);
-   })
-   .catch(err => {
-      console.error(err);
-      process.exit(1);
-   });
+// // remove all comments
+// db.Comment.deleteMany({})
+//    // remove all users
+//    .then(() => db.User.deleteMany({}))
+//    // add user
+//    .then(() => db.User.create(userSeed))
+//    // add comments seeds
+//    .then((user) => db.Comment.create(commentsSeeds[0])
+//       // add comment ref to user
+//       .then(({ _id }) => db.User.findOneAndUpdate({ _id: user._id }, { $push: { comments: _id } }, { new: true }))
+//    )
+//    .then((user) => db.Comment.create(commentsSeeds[1])
+//       // add comment ref to user
+//       .then(({ _id }) => db.User.findOneAndUpdate({ _id: user._id }, { $push: { comments: _id } }, { new: true }))
+//    )
+//    .then(() => {
+//       process.exit(0);
+//    })
+//    .catch(err => {
+//       console.error(err);
+//       process.exit(1);
+//    });

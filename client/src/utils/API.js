@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export default {
+const API = {
   // Gets all comments
   getComments: function() {
     return axios.get("/api/comments");
@@ -18,3 +18,5 @@ export default {
     return axios.post("/api/comments", commentData);
   }
 };
+
+export default API

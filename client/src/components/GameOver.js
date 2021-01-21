@@ -1,15 +1,5 @@
 const GameOver = ({ setTimer }) => { // change trigger above
     
-    // userEffect (
-
-
-
-    // , )
-
-    // function handleChange (){
-    //     setTimer( ) // change
-    // }
-
 
     return <div>
         
