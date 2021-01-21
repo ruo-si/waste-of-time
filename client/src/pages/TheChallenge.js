@@ -55,11 +55,8 @@ function Game() {
    
                <GameCanvas />
    
-
            </div>
        );
 };
-
-
 
 export default Game;
