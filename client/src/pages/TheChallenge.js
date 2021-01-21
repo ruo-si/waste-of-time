@@ -10,11 +10,7 @@ function Game() {
        const [gameStart, setGameStart] = useState(false);
        const [gameOver, setGameOver] = useState(false);
        const [timer, setTimer] = useState(5);
-   
-   //  <prop  setTimer ={ setTimer }/>
-   
-   
-   
+
    
        function toggle() {
    
@@ -24,9 +20,7 @@ function Game() {
            if (!gameStart) {
                // handleStartTime()
            }
-   
        }
-   
    
        //   timer countdown
        useEffect(() => {
@@ -59,13 +53,9 @@ function Game() {
                    {gameOver ? <GameOver setTimer ={setTimer} /> : <TrashMessage />}
                </div>
    
-   
-   
-   
                <GameCanvas />
    
-   
-   
+
            </div>
        );
 };
