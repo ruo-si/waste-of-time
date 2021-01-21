@@ -1,8 +1,10 @@
 import React from "react";
 
-function TheChallenge() {
+function TheChallenge({ setUserState }) {
     return (
         <h1>The Challenge</h1>
+
+        
     )
 };
 
