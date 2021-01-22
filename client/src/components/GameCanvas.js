@@ -20,7 +20,7 @@ const GameCanvas = () => {
 
 
   // game database POST payload
-  const [playState, setPlayState] = useState({
+  const [userState, setUserState] = useState({
     loggedIn: false,
     playId: 0,
     playerLevel: 1,
@@ -29,12 +29,25 @@ const GameCanvas = () => {
   });
 
 
+  const [Message, setMessage] = useState("");
+  const [gameScore, setGameScore] = useState(0)
 
-  //check if gameScore > db.user.highScore  
-      // setPlayState({...playState, highScore: playState.gameScore})
+  if (gameScore > userState.highScore){
+    setUserState({...userState, highScore: gameScore})
+  }
 
-  
-  
+  // function handleGameOver(){
+  //   setGameState({...gameState, gameOver: true, gameStart: false})
+  // }
+
+  // let counter = 0
+  // let timeleft = 60
+
+  // function timeIt() {
+  //   counter++;
+  //   timeleft - counter
+  // }
+  // setInterval(timeIt, 1000)
 
 
 
@@ -79,11 +92,11 @@ const GameCanvas = () => {
     Engine.run(engine);
 
     // create runner
-    var runner = Runner.create();
-    Runner.run(runner, engine);
+    // var runner = Runner.create();
+    // Runner.run(runner, engine);
 
 
-    // WALLS
+    // CREATE WALLS
     World.add(engine.world, [
 
       // top bar
@@ -144,6 +157,7 @@ const GameCanvas = () => {
 
     ]);
 
+    // INITIAL TRASH
     World.add(engine.world, [trashObjArr[1], trashObjArr[3], trashObjArr[2], trashObjArr[0], trashObjArr[2]]);
 
     // MOUSE CONTROL
@@ -174,8 +188,10 @@ const GameCanvas = () => {
             yScale: (0.5)
           }
         },
-        label: "normal",
-        // type: "locked,"
+        label: {
+          1: "locked",
+          2: "normal"
+        },
         collisionFilter: {
           category: 1
         }
@@ -193,7 +209,6 @@ const GameCanvas = () => {
           }
         },
         label: "food",
-        // type: "locked,"
         collisionFilter: {
           category: 2
         }
@@ -279,52 +294,163 @@ const GameCanvas = () => {
 
     // MOUSE EVENT (mousedown)
     Matter.Events.on(mouseConstraint, "mousedown", function (event) {
-      World.add(engine.world, Bodies.circle(150, 50, 30, {
-        render: {
-          sprite: {
-            texture: './fish_bone.svg',
-            xScale: (0.3),
-            yScale: (0.3)
+      World.add(engine.world, [
+        Bodies.circle(400, 50, 30, {
+          render: {
+            sprite: {
+              texture: './banana_1.svg',
+              xScale: (0.3),
+              yScale: (0.3)
+            },
+          },
+          collisionFilter: {
+            category: 8
+          },
+          label: "food"
+        }),
+        Bodies.circle(800, 50, 30, {
+          render: {
+            sprite: {
+              texture: './metal_can_1.svg',
+              xScale: (0.3),
+              yScale: (0.3)
+            },
+          },
+          collisionFilter: {
+            category: 8
+          },
+          label: "metal"
+        }),
+        Bodies.circle(510, 10, 50, {
+          restitution: 0.5,
+          label: "normal",
+          render: {
+            sprite: {
+              texture: './fish_bone.svg',
+              xScale: (0.3),
+              yScale: (0.3)
+            }
+          },
+          collisionFilter: {
+            category: 8
           }
-        },
-      }));
-    });
+        })
+      ])
+    })
 
     // Render.lookAt(render, {
     //   min: { x: 0, y: 0 },
     //   max: { x: 100, y: 1600 }
     // });
 
+    mouseConstraint.collisionFilter.group = 8
+
     // DRAG EVENT (enddrag) - get user moved object info
     Events.on(mouseConstraint, "enddrag", function (event) {
 
-      // if (event.body.label === "locked") {
 
-
-      // } else {
-
-      //   // REMOVING
-        Composite.remove(engine.world, event.body)
-
-      // }
-     
-      const bin_normalMaxX = bin_normal.bounds.max.x
-      const bin_normalMinX = bin_normal.bounds.min.x
-      const bin_normalMaxY = bin_normal.bounds.max.y
-      const bin_normalMinY = bin_normal.bounds.min.y
-
-      const trashX = event.mouse.absolute.x
-      const trashY = event.mouse.absolute.y
-     
       const trashLabel = event.body.label
       const binLabel = bin_normal.label
+      const lockEl = event.body.label[1]
 
-      if (trashLabel === binLabel && (trashY < bin_normalMaxY && trashY > bin_normalMaxY && trashX > bin_normalMaxX)) {
-        console.log("touched bin normal!")
-        // setPlayState( {...playState, gameScore : playState.gameScore + 1} )
+      const colNum = event.body.collisionFilter.category
+
+      console.log(colNum)
+      // console.log(event.body.label[1])
+      // console.log(event.body.label[2])
+
+      console.log(event)
+
+      if (colNum === 8) {
+
+        Composite.remove(engine.world, event.body)
+        setMessage("yay! score!")
+        setGameScore( gameScore => (gameScore +10));
+      }
+      else {
+
+        setMessage("Ouch!I don't belong Here")
+
       }
 
 
+      // if (lockEl !== "locked" && trashLabel === binLabel) {
+
+      //     console.log("hi");
+
+
+      //     console.log(playState.gameScore);
+
+      //     Composite.remove(engine.world, event.body)
+
+
+      // }
+
+
+
+
+      //  else {
+
+      //   const factArray = [
+      //     "food shoubee be thrown in the blue bin",
+      //     "metal shoubee be thrown in the blue bin",
+      //     "throw me in the green bin",
+      //     "throw me in the yellow bin",
+      //     "throw me in the white bin",
+      //     "throw me in the gray bin",
+      //   ]
+
+      //   console.log(trashLabel === factArray.property)
+
+
+      // switch  (trashLabel is "")
+
+      // case "food" :
+
+      // setFactState("throw me in the green bin!");
+
+      // case "metal" :
+
+      // setFactState()
+      // }
+
+      // if (!event.body.label[0] === "locked") {
+      //   // REMOVING ON CLICK-UP
+      // }
+
+
+
+
+
+
+
+
+      // const bin_normalMaxX = bin_normal.bounds.max.x
+      // const bin_normalMinX = bin_normal.bounds.min.x
+      // const bin_normalMaxY = bin_normal.bounds.max.y
+      // const bin_normalMinY = bin_normal.bounds.min.y
+
+      // const trashX = event.mouse.absolute.x
+      // const trashY = event.mouse.absolute.y
+
+      // if ((trashY > bin_normalMinY && trashY > bin_normalMaxY && trashX > bin_normalMaxX)) {
+
+      //   if (trashLabel === binLabel)
+
+      //     console.log("touched bin normal!")
+      // setPlayState( {...playState, gameScore : playState.gameScore + 1} )
+      // }
+
+      // console.log(trashLabel)
+      // console.log(binLabel)
+
+      // console.log(trashX)
+      // console.log(bin_normalMaxX)
+      // console.log(bin_normalMinX)
+
+      // console.log(trashY)
+      // console.log(bin_normalMaxY)
+      // console.log(bin_normalMinX)
 
     });
 
@@ -333,6 +459,7 @@ const GameCanvas = () => {
     render.mouse = mouse;
 
 
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
   // ============================================================
@@ -340,13 +467,21 @@ const GameCanvas = () => {
   return (
 
     <>
+      <div>
+        <h1>
+          {gameScore}
+        </h1>
 
-      <div
-        ref={boxRef}
+        <h2>
+          {Message}
+        </h2>
 
-      >
-
+        <h2>
+          your high score :{userState.highScore}
+        </h2>
       </div>
+
+      <div ref={boxRef}> </div>
 
     </>
   )

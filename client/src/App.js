@@ -17,8 +17,9 @@ import Dashboard from "./pages/Dashboard";
 // import ReactDOM from "react-dom";
 
 function App() {
-  const [userState, setUserState] = useState({});
-
+  const [userState, setUserState] = useState("hi"
+);
+console.log(userState)
   useEffect(() => {
     // auth user on first render
     authenticate()
@@ -45,11 +46,11 @@ function App() {
           />
           <Route
             exact path='/TheChallenge'
-            component={TheChallenge}
+            component={()=>(<TheChallenge {...userState} setUserState={setUserState} />)}
           />
           <Route
             exact path='/Login'
-            render={props => (
+          render={props => (
 
               <Login
                 {...props}
@@ -79,7 +80,7 @@ function App() {
 
           <Route exact path='/Dashboard' >
 
-            <Dashboard {...userState} />
+            <Dashboard userState={userState} />
 
           </Route>
 

@@ -1,10 +1,12 @@
-const GameOver = ({ setTimer }) => { // change trigger above
+const GameOver = () => { // change trigger above
     
 
     return <div>
         
         Game Over!
+        Summary
 
+        <button> Confirm Score </button> 
  </div>
 }
 

@@ -26,7 +26,7 @@ function Nav() {
             				</Link>
 						</li>
 
-						<li className="nav-item mr-sm-2" style={{ marginLeft: 760 }}>
+						<li  style={{ float: "right !important" }}>
 
 							<Link to="/Login" className={window.location.pathname === "/" ? "nav-link active" : "nav-link"}>
 								Login
