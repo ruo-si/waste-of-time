@@ -9,10 +9,9 @@ module.exports = {
          _id: req.user._id,
          username: req.user.username,
          email: req.user.email,
-         comments: req.user.comments,
          status: req.user.status,
          highScore: req.user.highScore,
-         score: req.user.score,
+         gameScore: req.user.gameScore,
          name: req.user.name
       });
    },
@@ -28,7 +27,7 @@ module.exports = {
          name: req.body.name,
          status: null,
          highScore: 0,
-         score: 0,
+         gameScore: 0
 
 
       })
@@ -53,10 +52,9 @@ module.exports = {
             _id: req.user._id,
             username: req.user.username,
             email: req.user.email,
-            comments: req.user.comments,
             status: req.user.status,
             highScore: req.user.highScore,
-            score: req.user.score,
+            gameScore: req.user.gameScore,
             name: req.user.name
          })
    }

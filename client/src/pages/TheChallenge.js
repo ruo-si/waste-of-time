@@ -3,15 +3,22 @@
 import React, { useEffect, useState } from "react";
 import GameCanvas from "../components/GameCanvas"
 import GameOver from "../components/GameOver"
-import TrashMessage from "../components/TrashMessage"
 
-function Game() {
+function Game({userState, setUserState}) {
+    // console.log(gameScore)
+    // console.log(highScore)
+    console.log(userState)
+    console.log(setUserState)
        // score state
        const [gameStart, setGameStart] = useState(false);
        const [gameOver, setGameOver] = useState(false);
        const [timer, setTimer] = useState(5);
 
-   
+    //    const [gameScore, setGameScore] = useState(0)
+let i =0
+       if (i=0){
+           setUserState({...userState, highScore : 5})
+       }
        function toggle() {
    
            setGameStart(!gameStart);
@@ -33,6 +40,7 @@ function Game() {
                        // handleGameOver()
                        console.log("gameover");
                        setGameStart(false);
+                       setGameOver(true)
                    }
                }, 1000);
            }
@@ -50,10 +58,10 @@ function Game() {
                </button>
    
                <div>
-                   {gameOver ? <GameOver setTimer ={setTimer} /> : <TrashMessage />}
+                   {gameOver && <GameOver />}
                </div>
    
-               <GameCanvas />
+               {gameStart &&  <GameCanvas />}
    
            </div>
        );
