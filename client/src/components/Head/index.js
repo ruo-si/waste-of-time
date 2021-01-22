@@ -2,44 +2,27 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
 // import { BrowserRouter as Router,Switch,Route,Link } from "react-router-dom";
-
+import Login from "../../assets/Login@2x.png";
+import "./index.css";
 
 function Nav() {
+  return (
+    <nav className="topnav"  className="nav-left" >
+      <div>
+        <Link to="/" style={{marginRight: "30px", color:"black"}}>WASTE OF TIME</Link>
 
-	return (
-		
-		<div>
-			<nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <Link to="/TheChallenge" style={{marginRight: "30px", color:"black"}} className={window.location.pathname === "/"}>
+          The Challenge
+        </Link>
+      </div>
 
-				<Link to="/" className="navbar-brand">
-					WasteOfTime
-        		</Link>
-
-				<div>
-
-					<ul className="navbar-nav">
-
-						<li className="nav-item">
-
-							<Link to="/TheChallenge" className={window.location.pathname === "/" ? "nav-link active" : "nav-link"}>
-								The Challenge
-            				</Link>
-						</li>
-
-						<li  style={{ float: "right !important" }}>
-
-							<Link to="/Login" className={window.location.pathname === "/" ? "nav-link active" : "nav-link"}>
-								Login
-            				</Link>
-
-						</li>
-
-					</ul>
-
-				</div>
-			</nav>
-		</div>
-	);
-};
+      <div >
+        <Link to="/Login" className={window.location.pathname === "/"}>
+          <img class="login" src={Login}  />
+        </Link>
+      </div>
+    </nav>
+  );
+}
 
 export default Nav;

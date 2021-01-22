@@ -1,0 +1,57 @@
+
+
+
+
+.cta{
+    color: white;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    padding-left:30px;
+    padding-right:30px;
+    background-color: #0B4245;
+    border-radius: 30px;
+}
+
+/* Split the screen in half */
+.split {
+    height: 100%;
+    width: 50%;
+    position: fixed;
+    z-index: -100;
+    top: 0;
+    overflow-x: hidden;
+    padding-top: 20px;
+  }
+  
+  /* Control the left side */
+  .left {
+    left: 0;
+    /* background-color: #111; */
+  }
+  
+  /* Control the right side */
+  .right {
+    right: 0;
+    /* background-color: red; */
+  }
+
+  .centered {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+  }
+  
+  /* Style the image inside the centered container, if needed */
+  .centered img {
+    width: 150px;
+    border-radius: 50%;
+  }
+
+  .split-title {
+      font-size: 72px;
+      font-weight: 700;
+      line-height: 1em;
+  }
+

@@ -1,12 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 // import Comments from "./pages/Dashboard";
-import { Container } from "./components/Grid";
+// import { Container } from "./components/Grid";
 // import Comment from "./pages/Comment";
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import NoMatch from "./pages/NoMatch";
 import Head from "./components/Head";
+import Footer from "./components/Footer";
 import userAPI from "./utils/userAPI";
 // import ProtectedRoute from "./components/ProtectedRoute";
 import Home from "./pages/Home";
@@ -38,7 +39,7 @@ console.log(userState)
   return (
     <Router>
       <Head />
-      <Container>
+      
         <Switch>
           <Route
             exact path='/'
@@ -88,10 +89,10 @@ console.log(userState)
 
         </Switch>
 
-      </Container>
+    
 
       {userState.email ? <Redirect to="/Dashboard" /> : <></>}
-      
+      <Footer />
     </Router>
   );
 }
