@@ -7,8 +7,8 @@ import { Input, FormBtn } from "../components/Form";
 
 class Signup extends Component {
   state = {
-    email: "Email",
-    username: "Username",
+    email: "",
+    username: "",
     password: "",
     passwordConf: "",
     name: ""
@@ -38,7 +38,7 @@ class Signup extends Component {
         .then(res => {
           if (res.status === 200) {
             this.props.authenticate();
-            return <Redirect to="/comments" />
+            return <Redirect to="/Login" />
           }
         })
         .catch(err => console.log(err.response.data));
@@ -68,7 +68,7 @@ class Signup extends Component {
                 value={this.state.email}
                 onChange={this.handleInputChange}
                 name="email"
-                placeholder="email (required)"
+                placeholder="email "
               />
               <Input
                 value={this.state.password}
