@@ -1,5 +1,14 @@
 .twitter {
+    text-align: Left !important;
+    display: inline !important;
+    /* margin: auto !important; */
+    color:black;
+    margin-right:15px;
+}
+.facebook {
     text-align: center !important;
-    display: block !important;
-    margin: auto !important;
+    display: inline !important;
+    /* margin: auto !important; */
+    color:black;
+    margin-right:15px;
 }
