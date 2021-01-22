@@ -12,13 +12,13 @@ function Game({userState, setUserState}) {
        // score state
        const [gameStart, setGameStart] = useState(false);
        const [gameOver, setGameOver] = useState(false);
-       const [timer, setTimer] = useState(5);
+       const [timer, setTimer] = useState(20);
 
     //    const [gameScore, setGameScore] = useState(0)
-let i =0
-       if (i=0){
-           setUserState({...userState, highScore : 5})
-       }
+// let i =0
+//        if (i=0){
+//            setUserState({...userState, highScore : 5})
+//        }
        function toggle() {
    
            setGameStart(!gameStart);

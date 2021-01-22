@@ -1,0 +1,25 @@
+footer {
+  background-color: #ffffff;
+  z-index: 1;
+  width: 100vw;
+  padding: 30px;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  backdrop-filter: blur(8px);
+  font-size: 20px;
+  font-weight: 800;
+}
+
+.footer-right {
+  display: inline;
+}
+
+.ft-itm-right {
+  float: right;
+}
+
+.ft-itm-left {
+  float: left;
+}
+
