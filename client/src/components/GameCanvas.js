@@ -2,39 +2,13 @@
 import React, { useEffect, useRef, useState } from "react";
 import Matter, { Events } from "matter-js";
 
-
 import trashObjArr from "../utils/trashObjArr"
 // import binObjArr from "../utils/binArr"
 
+// ============================================================
+// MATTER.JS  (useEffect)
 
-const GameCanvas = () => {
-
-  // ============================================================
-  // JS GAME LOGIC
-
-  // score state
-  // const [gameStart, setGameStart] = useState(false);
-  // const [gameOver, setGameOver] = useState(false);
-  // const [timer, setTimer] = useState(5);
-
-  // game database POST payload
-  const [userState, setUserState] = useState({
-    loggedIn: false,
-    playId: 0,
-    playerLevel: 1,
-    highScore: 0,
-    gameScore: 0,
-  });
-
-  const [Message, setMessage] = useState("");
-  const [gameScore, setGameScore] = useState(0)
-
-  if (gameScore > userState.highScore) {
-    setUserState({ ...userState, highScore: gameScore })
-  };
-
-  // ============================================================
-  // MATTER.JS  (useEffect)
+const GameCanvas = ({ gameScore, setGameScore, setMessage }) => {
 
   const boxRef = useRef(null)
 
@@ -484,14 +458,7 @@ const GameCanvas = () => {
   return (
 
     <>
-      <div>
-        <h1>
-          {gameScore} {Message}
-        </h1>
-      </div>
-
       <div ref={boxRef}> </div>
-
     </>
   )
 }
