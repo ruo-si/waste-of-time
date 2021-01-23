@@ -19,7 +19,7 @@ const userSeed =
    status: "second tier",
    gameScore: 180,
 }
-//    ;
+   ;
 // const commentsSeeds = [
 //    {
 //       body: "🚀 initial seed",
@@ -32,12 +32,12 @@ const userSeed =
 
 // ];
 
-// // remove all comments
-// db.Comment.deleteMany({})
-//    // remove all users
-//    .then(() => db.User.deleteMany({}))
-//    // add user
-//    .then(() => db.User.create(userSeed))
+// remove all comments
+db.Comment.deleteMany({})
+   // remove all users
+   .then(() => db.User.deleteMany({}))
+   // add user
+   .then(() => db.User.create(userSeed))
 //    // add comments seeds
 //    .then((user) => db.Comment.create(commentsSeeds[0])
 //       // add comment ref to user
