@@ -14,7 +14,7 @@ import Home from "./pages/Home";
 // import TheScene from "./pages/TheScene";
 import TheChallenge from "./pages/TheChallenge";
 import Dashboard from "./pages/Dashboard";
-import BannerQuote from "../components/BannerQuote";
+import BannerQuote from "./components/BannerQuote";
 
 
 // import ReactDOM from "react-dom";

@@ -2,6 +2,7 @@
 import React, { useEffect, useState } from "react";
 import GameCanvas from "../components/GameCanvas"
 import GameOver from "../components/GameOver"
+import "./pages.css"
 
 function Game({ userState , setUserState}) {
     // console.log(gameScore)
@@ -58,14 +59,14 @@ function Game({ userState , setUserState}) {
 
     return (
 
-        <div>
+        <div className="gamewrap" >
             <div>{timer} {Message}</div>
 
-            <button className={`button button-primary button-primary-${gameStart ? true : false}`} onClick={toggle} >
+            <button className={`${gameStart ? true : false}`} onClick={toggle} >
                 {gameStart ? "Exit" : "Start"}
             </button>
 
-            <div>
+            <div >
                 {gameOver && <GameOver />}
             </div>
 
