@@ -1,7 +1,7 @@
 import React from "react";
 import headerVid from "./assets/header_video_portrait.mp4";
 import "./pages.css";
-
+import { Link } from 'react-router-dom';
 function Home() {
   return (
     <div className="header-wrap">
@@ -11,10 +11,10 @@ function Home() {
 
       <div className="split right">
         <div className="centered">
-          <div className="split-title">WASTE OF TIME</div>
+          <div className="split-title">RECYCLING CHALLENGE</div>
 
           <button className="cta">
-            <a href="/TheChallenge"  style={{color:"white"}}> Enter to Play </a>
+         <Link to="/TheChallenge" style={{color:"white"}}>Enter to Play </Link>
           </button>
         </div>
       </div>

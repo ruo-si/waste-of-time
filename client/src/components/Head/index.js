@@ -7,18 +7,13 @@ import "./index.css";
 
 function Nav() {
   return (
-    <nav className="topnav nav-left">
+    <nav className="topnav">
       <div>
-        <Link to="/" style={{marginRight: "30px", color:"black"}}>WASTE OF TIME</Link>
-
-        <Link to="/TheChallenge" style={{marginRight: "30px", color:"black"}} className={window.location.pathname === "/"}>
-          The Challenge
+        <Link to="/" className="nav-left" style={{color: "black" }}>
+          WASTE OF TIME
         </Link>
-      </div>
-
-      <div >
-        <Link to="/Login" className={window.location.pathname === "/"}>
-          <img className="login" src={Login} alt={"login button"} />
+        <Link to="/Login" >
+          <img src={Login} alt="login" className="login" />
         </Link>
       </div>
     </nav>

@@ -71,7 +71,9 @@ function App() {
               {...props}
               authenticate={authenticate}
               user={userState}
+            
             />
+
           )}
         />
         <Route exact path={["/", "/Dashboard"]}>
@@ -88,11 +90,13 @@ function App() {
 
         <Route component={NoMatch} />
 
+        
       </Switch>
 
-
-
+           
       {userState.email ? <Redirect to="/Dashboard" /> : <></>}
+
+     
       <Footer />
     </Router>
   );

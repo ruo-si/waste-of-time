@@ -1,18 +1,23 @@
-const GameOver = () => { // change trigger above
-    
+import { Link } from "react-router-dom";
 
-    return <div>
-        
-        Game Over!
-        Summary
+const GameOver = ({ gameScore }) => {
+  // change trigger above
 
-        <button> Confirm Score </button> 
- </div>
-}
+  return (
+    <div>
+      Game Over! Summary
+      <div>{gameScore}</div>
+      <button>
+        <Link to="/Dashboard" className="cta" style={{ color: "white", marginTop: "30px" }}>
+          Confirm Score
+        </Link>
+      </button>
+    </div>
+  );
+};
 
-export default GameOver
-
+export default GameOver;
 
 // take score from the user in App.js (line20 for user state)
 
-    // pass the user to the scoreboard/progressbar 
+// pass the user to the scoreboard/progressbar
