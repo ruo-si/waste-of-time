@@ -11,25 +11,31 @@ import ProgressBar from "../components/PointTimeline";
 import PointText from "../components/PointText";
 import TwitterBtn from "../components/TwitterBtn";
 
-
 function Dashboard(props) {
-
-	// Setting our component's initial state
-	return (
-		<div>
-			<h1 style={{
-				display: "flex",
-				justifyContent: "center",
-				alignItems: "center",
-				fontcolor: "white",
-			}}>Hello,  {props.name}!</h1>
-			<ProgressBar user={props} />
-			<PointText />
-			<TwitterBtn />
-
-
-		</div>
-	)
+  // Setting our component's initial state
+  return (
+    <div>
+      <h1
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          alignItems: "center",
+          fontcolor: "white",
+        }}
+      >
+        Hello, {props.name}!
+      </h1>
+      <ProgressBar user={props} />
+      <PointText />
+      <TwitterBtn />
+      <button>
+        <a href="/TheChallenge" style={{ color: "white" }}>
+          {" "}
+          Play Again
+        </a>
+      </button>
+    </div>
+  );
 }
 
 export default Dashboard;

@@ -5,19 +5,19 @@ import "./style.css";
 function PointText() {
     return (
         <>
-            <div className="container">
+            <div className="wrap">
                 <div className="row points">
+                    <div className="col">
+                        <h4>25</h4>
+                    </div>
+                    <div className="col">
+                        <h4>50</h4>
+                    </div>
                     <div className="col">
                         <h4>75</h4>
                     </div>
                     <div className="col">
-                        <h4>150</h4>
-                    </div>
-                    <div className="col">
-                        <h4>225</h4>
-                    </div>
-                    <div className="col">
-                        <h4>300</h4>
+                        <h4>100</h4>
                     </div>
                 </div>
                 <div className="row tiers">

@@ -3,7 +3,8 @@ import React, { Component } from "react";
 import userAPI from "../utils/userAPI";
 import { Redirect, Link } from "react-router-dom";
 import { Col, Row, Container } from "../components/Grid";
-import { Input, FormBtn } from "../components/Form";
+// import { Input, FormBtn } from "../components/Form";
+import "./pages.css"
 
 class Signup extends Component {
   state = {
@@ -47,37 +48,37 @@ class Signup extends Component {
 
   render() {
     return (
-      <Container fluid>
+      <Container>
         <Row>
-          <Col size="12">
+          <Col size="6">
 
             <form>
-              <Input
+              <input
                 value={this.state.username}
                 onChange={this.handleInputChange}
                 name="username"
                 placeholder="username"
               />
-              <Input
+              <input
                 value={this.state.name}
                 onChange={this.handleInputChange}
                 name="name"
                 placeholder="Name"
               />
-              <Input
+              <input
                 value={this.state.email}
                 onChange={this.handleInputChange}
                 name="email"
                 placeholder="email "
               />
-              <Input
+              <input
                 value={this.state.password}
                 onChange={this.handleInputChange}
                 name="password"
                 placeholder="Password"
                 type="Confirm Password"
               />
-              <Input
+              <input
                 value={this.state.passwordConf}
                 onChange={this.handleInputChange}
                 name="passwordConf"
@@ -85,14 +86,15 @@ class Signup extends Component {
                 type="password"
               />
 
-              <FormBtn
+              <button
                 // disabled={!(this.state.email && this.state.password)}
                 onClick={this.handleFormSubmit}
+                className="cta"
               >
-                signup
-              </FormBtn>
+                Signup
+              </button>
               <Link to="/">
-                <FormBtn> Login </FormBtn>
+                <button className="cta"> Login </button>
               </Link>
             </form>
           </Col>

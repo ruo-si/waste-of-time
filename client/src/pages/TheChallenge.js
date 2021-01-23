@@ -50,6 +50,7 @@ function Game({ userState , setUserState}) {
                     console.log("gameover");
                     setGameStart(false);
                     setGameOver(true)
+                    setTimer(20)
                 }
             }, 1000);
         }
@@ -60,14 +61,16 @@ function Game({ userState , setUserState}) {
     return (
 
         <div className="gamewrap" >
-            <div>{timer} {Message}</div>
+           {gameStart && <div>{gameScore} Point</div>}
+        {gameStart && <div>{timer} S</div>}
+            {!gameOver || !gameStart && <div>{Message}</div>}
 
             <button className={`${gameStart ? true : false}`} onClick={toggle} >
                 {gameStart ? "Exit" : "Start"}
             </button>
 
             <div >
-                {gameOver && <GameOver />}
+                {gameOver && <GameOver gameScore={gameScore}/>}
             </div>
 
             {gameStart && <GameCanvas gameScore={gameScore} setGameScore={setGameScore} setMessage={setMessage} />}

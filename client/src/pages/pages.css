@@ -3,6 +3,14 @@
 text-align: center;
 }
 
+a {
+  color:#000000;
+  text-decoration:none;
+}
+a:hover {
+  color:#000000;
+  text-decoration:none;
+}
 
 .cta{
     color: white;
@@ -12,6 +20,7 @@ text-align: center;
     padding-right:30px;
     background-color: #0B4245;
     border-radius: 30px;
+    margin-right: 20px;
 }
 
 /* Split the screen in half */
@@ -55,5 +64,13 @@ text-align: center;
       font-size: 72px;
       font-weight: 700;
       line-height: 1em;
+  }
+
+  input{
+    width:100%;
+    border-radius:5px;
+    border: 1px solid #d7d7d7;
+    margin-bottom: 15px;
+    padding:10px
   }
 

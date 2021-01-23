@@ -6,9 +6,10 @@ import './index.css'
 function Footer() {
   return (
     <footer>
-      <div className="ft-itm-left">2021 All Right Reserve</div>
+      <div className="ft-itm-left">2021 © All Right Reserve</div>
 
-      <div className="ft-itm-right footer-right">Git Hub</div>
+      <div className="ft-itm-right footer-right">
+        <a target="_blank" href="https://github.com/rialee/waste-of-time">GitHub</a></div>
     </footer>
   );
 }
