@@ -19,10 +19,10 @@ const banana1 = Bodies.circle(210, 100, 50, {
 
 const banana2 = Bodies.circle(210, 100, 50, {
     restitution: 0.5,
-    label: "food",
+    label: "metal",
     render: {
         sprite: {
-            texture: './banana_2.svg',
+            texture: './tire.svg',
             xScale: (0.3),
             yScale: (0.3)
         }

@@ -62,8 +62,8 @@ function Game({ userState , setUserState}) {
 
         <div className="gamewrap" >
            {gameStart && <div>{gameScore} Point</div>}
-        {gameStart && <div>{timer} S</div>}
-            {!gameOver || !gameStart && <div>{Message}</div>}
+        {gameStart && <div>{timer} s</div>}
+            {gameStart && <div>{Message}</div>}
 
             <button className={`${gameStart ? true : false}`} onClick={toggle} >
                 {gameStart ? "Exit" : "Start"}

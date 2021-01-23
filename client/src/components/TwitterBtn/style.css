@@ -1,5 +1,5 @@
 .twitter {
-    text-align: Left !important;
+    text-align: center !important;
     display: inline !important;
     /* margin: auto !important; */
     color:black;
@@ -11,4 +11,7 @@
     /* margin: auto !important; */
     color:black;
     margin-right:15px;
+}
+.center {
+    margin: auto;
 }

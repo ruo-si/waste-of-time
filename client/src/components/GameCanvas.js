@@ -132,7 +132,7 @@ const GameCanvas = ({ gameScore, setGameScore, setMessage }) => {
         isSensor: true,
         render: {
           sprite: {
-            texture: './bin_green.png',
+            texture: './bin_garbage.png',
             xScale: (0.5),
             yScale: (0.5)
           }
@@ -149,7 +149,7 @@ const GameCanvas = ({ gameScore, setGameScore, setMessage }) => {
         isStatic: true,
         render: {
           sprite: {
-            texture: './bin_red.png',
+            texture: './bin_compost.png',
             xScale: (0.5),
             yScale: (0.5)
           }
@@ -166,7 +166,7 @@ const GameCanvas = ({ gameScore, setGameScore, setMessage }) => {
         isStatic: true,
         render: {
           sprite: {
-            texture: './bin_blue.png',
+            texture: './bin_paper.png',
             xScale: (0.5),
             yScale: (0.5)
           }
@@ -183,7 +183,7 @@ const GameCanvas = ({ gameScore, setGameScore, setMessage }) => {
         isStatic: true,
         render: {
           sprite: {
-            texture: './bin_gray.png',
+            texture: './bin_glass.png',
             xScale: (0.5),
             yScale: (0.5)
           }
@@ -201,7 +201,7 @@ const GameCanvas = ({ gameScore, setGameScore, setMessage }) => {
         isStatic: true,
         render: {
           sprite: {
-            texture: './bin_yellow.png',
+            texture: './bin_plastic.png',
             xScale: (0.5),
             yScale: (0.5)
           }
@@ -218,7 +218,7 @@ const GameCanvas = ({ gameScore, setGameScore, setMessage }) => {
         isStatic: true,
         render: {
           sprite: {
-            texture: './bin_geen2.png',
+            texture: './bin_metal.png',
             xScale: (0.5),
             yScale: (0.5)
           },
@@ -427,10 +427,10 @@ const GameCanvas = ({ gameScore, setGameScore, setMessage }) => {
 
       if ((trashY > bin_plasticMinY && trashY < bin_plasticMaxY && trashX > bin_plasticMinX && trashX < bin_plasticMaxX)) {
 
-        console.log("platic")
+        console.log("plastic")
 
         if (colNum === 8) {
-          if (trashLabel === "platic") {
+          if (trashLabel === "plastic") {
 
             setMessage("yay! score!")
 

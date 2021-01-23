@@ -12,6 +12,11 @@ a:hover {
   text-decoration:none;
 }
 
+.btn:focus,.btn:active {
+  outline: none !important;
+  box-shadow: none;
+}
+
 .cta{
     color: white;
     padding-top: 15px;
