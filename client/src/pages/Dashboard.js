@@ -10,11 +10,11 @@
 import ProgressBar from "../components/PointTimeline";
 import PointText from "../components/PointText";
 import TwitterBtn from "../components/TwitterBtn";
-
+import { Link } from 'react-router-dom';
 function Dashboard(props) {
   // Setting our component's initial state
   return (
-    <div>
+    <div >
       <h1
         style={{
           display: "flex",
@@ -26,14 +26,15 @@ function Dashboard(props) {
         Hello, {props.name}!
       </h1>
       <ProgressBar user={props} />
-      <PointText />
+	  <div  style={{
+          textAlign: "center"
+        }} >
+      <PointText/>
       <TwitterBtn />
-      <button>
-        <a href="/TheChallenge" style={{ color: "white" }}>
-          {" "}
-          Play Again
-        </a>
-      </button>
+      <button className="cta">
+	  <Link to="/TheChallenge" style={{color:"white", }}>Play Again</Link>
+   	</button>
+	  </div>
     </div>
   );
 }

@@ -4,7 +4,7 @@ import ProgressBar from 'react-bootstrap/ProgressBar';
 function PointTimeline(props) {
     return (
         <div>
-            <ProgressBar now={props.user.highScore+30} />
+            <ProgressBar now={props.user.highScore + 10} />
         </div>
         
     )
