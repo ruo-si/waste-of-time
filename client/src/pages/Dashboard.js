@@ -10,8 +10,6 @@
 import ProgressBar from "../components/PointTimeline";
 import PointText from "../components/PointText";
 import TwitterBtn from "../components/TwitterBtn";
-// import BannerQuote from "../components/RecycleQuote";
-// import Recycle from "../components/RecycleLogo";
 
 
 function Dashboard(props) {
@@ -19,7 +17,6 @@ function Dashboard(props) {
 	// Setting our component's initial state
 	return (
 		<div>
-			{/* <BannerQuote /> */}
 			<h1 style={{
 				display: "flex",
 				justifyContent: "center",

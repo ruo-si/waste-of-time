@@ -14,12 +14,13 @@ import Home from "./pages/Home";
 // import TheScene from "./pages/TheScene";
 import TheChallenge from "./pages/TheChallenge";
 import Dashboard from "./pages/Dashboard";
+import BannerQuote from "../components/BannerQuote";
 
 
 // import ReactDOM from "react-dom";
 function App() {
   const [userState, setUserState] = useState({})
-console.log(userState)
+  console.log(userState)
   useEffect(() => {
     // auth user on first render
     authenticate()
@@ -37,58 +38,59 @@ console.log(userState)
   console.log(userState)
   return (
     <Router>
+      <BannerQuote />
       <Head />
-      
-        <Switch>
-          <Route
-            exact path='/'
-            component={Home}
-          />
-          <Route
-            exact path='/TheChallenge'
-            component={()=>(<TheChallenge userState={userState} setUserState={setUserState} />)}
-          />
-          <Route
-            exact path='/Login'
+
+      <Switch>
+        <Route
+          exact path='/'
+          component={Home}
+        />
+        <Route
+          exact path='/TheChallenge'
+          component={() => (<TheChallenge userState={userState} setUserState={setUserState} />)}
+        />
+        <Route
+          exact path='/Login'
           render={props => (
 
-              <Login
-                {...props}
-                authenticate={authenticate}
-                user={userState}
-                setUserState={setUserState}
-              />
-            )}
+            <Login
+              {...props}
+              authenticate={authenticate}
+              user={userState}
+              setUserState={setUserState}
+            />
+          )}
 
-          />
-          <Route
-            exact path='/signup'
-            render={props => (
+        />
+        <Route
+          exact path='/signup'
+          render={props => (
 
-              <Signup
-                {...props}
-                authenticate={authenticate}
-                user={userState}
-              />
-            )}
-          />
-          <Route exact path={["/", "/Dashboard"]}>
-            
-            <Dashboard {...userState} />
-            
-          </Route>
+            <Signup
+              {...props}
+              authenticate={authenticate}
+              user={userState}
+            />
+          )}
+        />
+        <Route exact path={["/", "/Dashboard"]}>
 
-          <Route exact path='/Dashboard' >
+          <Dashboard {...userState} />
 
-            <Dashboard userState={userState} />
+        </Route>
 
-          </Route>
+        <Route exact path='/Dashboard' >
 
-          <Route component={NoMatch} />
+          <Dashboard userState={userState} />
 
-        </Switch>
+        </Route>
 
-    
+        <Route component={NoMatch} />
+
+      </Switch>
+
+
 
       {userState.email ? <Redirect to="/Dashboard" /> : <></>}
       <Footer />
