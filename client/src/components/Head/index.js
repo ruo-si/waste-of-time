@@ -7,7 +7,7 @@ import "./index.css";
 
 function Nav() {
   return (
-    <nav className="topnav"  className="nav-left" >
+    <nav className="topnav nav-left">
       <div>
         <Link to="/" style={{marginRight: "30px", color:"black"}}>WASTE OF TIME</Link>
 
@@ -18,7 +18,7 @@ function Nav() {
 
       <div >
         <Link to="/Login" className={window.location.pathname === "/"}>
-          <img class="login" src={Login}  />
+          <img className="login" src={Login} alt={"login button"} />
         </Link>
       </div>
     </nav>
