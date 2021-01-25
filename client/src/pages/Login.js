@@ -22,10 +22,10 @@ class Login extends Component {
 
   handleFormSubmit = (event) => {
     event.preventDefault();
-    if (this.state.email && this.state.password.name) {
+    if (this.state.email && this.state.password) {
       userAPI
         .loginUser({
-          email: this.state.email.name,
+          email: this.state.email,
           password: this.state.password,
           name: this.state.name,
         })

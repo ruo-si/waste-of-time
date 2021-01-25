@@ -79,3 +79,7 @@ a:hover {
     padding:10px
   }
 
+  button:focus, .button:active {
+    outline: none !important;
+    box-shadow: none !important;
+  }
