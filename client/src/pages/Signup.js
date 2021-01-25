@@ -93,7 +93,7 @@ class Signup extends Component {
               >
                 Signup
               </button>
-              <Link to="/">
+              <Link to="/login">
                 <button className="cta"> Login </button>
               </Link>
             </form>
