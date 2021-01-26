@@ -9,16 +9,16 @@ mongoose.connect(process.env.ATLAS_URL || "mongodb://localhost/waste-of-time",
    mongoOptions
 );
 
-const userSeed =
-{
-   username: "Admin",
-   name: "Lilly",
-   email: "admin@contact.us",
-   password: "1",
-   highScore: 150,
-   status: "second tier",
-   gameScore: 180,
-}
+// const userSeed =
+// {
+//    username: "Admin",
+//    name: "Lilly",
+//    email: "admin@contact.us",
+//    password: "1",
+//    highScore: 150,
+//    status: "second tier",
+//    gameScore: 180,
+// }
    ;
 // const commentsSeeds = [
 //    {
@@ -33,11 +33,11 @@ const userSeed =
 // ];
 
 // remove all comments
-db.Comment.deleteMany({})
+// db.Comment.deleteMany({})
    // remove all users
-   .then(() => db.User.deleteMany({}))
+   // .then(() => db.User.deleteMany({}))
    // add user
-   .then(() => db.User.create(userSeed))
+   // .then(() => db.User.create(userSeed))
 //    // add comments seeds
 //    .then((user) => db.Comment.create(commentsSeeds[0])
 //       // add comment ref to user
