@@ -7,7 +7,7 @@ function PointTimeline(props) {
 
     return (
         <div>
-            <ProgressBar now={props.user.highScore + 10} />
+            <ProgressBar now={props.user.highScore} />
         </div>
     )
 };

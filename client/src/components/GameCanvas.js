@@ -108,7 +108,7 @@ const GameCanvas = ({ setGameScore, setMessage }) => {
     ]);
 
     // INITIAL TRASH
-    World.add(engine.world, [trashObjArr[1], trashObjArr[3], trashObjArr[2], trashObjArr[0], trashObjArr[2]]);
+    // World.add(engine.world, [trashObjArr[1], trashObjArr[3], trashObjArr[2], trashObjArr[0], trashObjArr[2]]);
 
     // MOUSE CONTROL
     var mouse = Mouse.create(render.canvas),
