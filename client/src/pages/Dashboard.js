@@ -1,4 +1,5 @@
-// import React, { useState, useEffect, useRef } from "react";
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, { useState, useEffect} from "react";
 // import React, { useState, useEffect, useRef } from "react";
 
 // import DeleteBtn from "../components/DeleteBtn";
@@ -12,7 +13,24 @@ import PointText from "../components/PointText";
 import TwitterBtn from "../components/TwitterBtn";
 import { Link } from 'react-router-dom';
 function Dashboard(props) {
+
   // Setting our component's initial state
+  console.log(props)
+ 
+  const [dashState, setDashState] = useState({})
+
+  useEffect(()=>{
+
+    setDashState({
+      name: props.name,
+      gameScore: props.gameScore,
+      highScore:props.highScore,
+      status: props.status
+    })
+  },[])
+
+console.log(dashState.name)
+
   return (
     <div >
       <h1
@@ -23,9 +41,9 @@ function Dashboard(props) {
           fontcolor: "white",
         }}
       >
-        Hello, {props.name}!
+        Hello, {dashState.name}!
       </h1>
-      <ProgressBar user={props} />
+      <ProgressBar user={dashState} />
 	  <div  style={{
           textAlign: "center"
         }} >

@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from "react";
 import { BrowserRouter as Router, Route, Switch, Redirect } from "react-router-dom";
 // import Comments from "./pages/Dashboard";
@@ -19,12 +20,34 @@ import BannerQuote from "./components/BannerQuote";
 
 // import ReactDOM from "react-dom";
 function App() {
+
   const [userState, setUserState] = useState({})
-  console.log(userState)
+  // console.log(userState)
   useEffect(() => {
     // auth user on first render
     authenticate()
   }, []);
+
+  console.log(userState)
+
+  // userState for testing ONLY
+  const [demoUser, setUserDemo] = useState({
+    email: "userState.email",
+    gameScore: 30,
+    highScore: 40,
+    name: "vvv",
+    status: null,
+    username: "VVV",
+  });
+
+  // const [demoUser, setUserDemo] = useState({
+  //   email: userState.email,
+  //   gameScore: userState.gameScore,
+  //   highScore: userState.highScore,
+  //   name: userState.name,
+  //   status: userState.status,
+  //   username: userState.username,
+  // });
 
   //user authentication
   function authenticate() {
@@ -35,7 +58,9 @@ function App() {
       })
       .catch((err) => console.log('registered user:', err.response));
   }
-  console.log(userState)
+
+  // console.log(userState)
+
   return (
     <Router>
       <BannerQuote />
@@ -71,32 +96,32 @@ function App() {
               {...props}
               authenticate={authenticate}
               user={userState}
-            
+
             />
 
           )}
         />
         <Route exact path={["/", "/Dashboard"]}>
 
-          <Dashboard {...userState} />
+          <Dashboard {...demoUser} />
 
         </Route>
 
         <Route exact path='/Dashboard' >
 
-          <Dashboard userState={userState} />
+          <Dashboard userState={demoUser} />
 
         </Route>
 
         <Route component={NoMatch} />
 
-        
+
       </Switch>
 
-           
+
       {userState.email ? <Redirect to="/Dashboard" /> : <></>}
 
-     
+
       <Footer />
     </Router>
   );
