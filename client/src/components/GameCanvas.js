@@ -3,12 +3,13 @@ import React, { useEffect, useRef, useState } from "react";
 import Matter, { Events } from "matter-js";
 
 import trashObjArr from "../utils/trashObjArr"
+import userAPI from "../utils/userAPI";
 // import binObjArr from "../utils/binArr"
 
 // ============================================================
 // MATTER.JS  (useEffect)
 
-const GameCanvas = ({ gameScore, setGameScore, setMessage }) => {
+const GameCanvas = ({ setGameScore, setMessage }) => {
 
   const boxRef = useRef(null)
 
@@ -17,7 +18,7 @@ const GameCanvas = ({ gameScore, setGameScore, setMessage }) => {
     // module aliases
     let Engine = Matter.Engine
     let Render = Matter.Render
-    let Runner = Matter.Runner
+    // let Runner = Matter.Runner
     let World = Matter.World
     let Bodies = Matter.Bodies
     let Mouse = Matter.Mouse
@@ -53,7 +54,7 @@ const GameCanvas = ({ gameScore, setGameScore, setMessage }) => {
         isStatic: true,
         background: false,
         render: {
-          fillStyle: 'white',
+          fillStyle: 'red',
           strokeStyle: 'white',
           lineWidth: 0
         },
@@ -64,7 +65,7 @@ const GameCanvas = ({ gameScore, setGameScore, setMessage }) => {
       Bodies.rectangle(600, 600, 1800, 50, {
         isStatic: true,
         render: {
-          fillStyle: 'white',
+          fillStyle: 'red',
           strokeStyle: 'white',
           lineWidth: 0
         },
@@ -75,7 +76,7 @@ const GameCanvas = ({ gameScore, setGameScore, setMessage }) => {
       Bodies.rectangle(600, 430, 1800, 30, {
         isStatic: true,
         render: {
-          fillStyle: 'white',
+          fillStyle: 'red',
           strokeStyle: 'white',
           lineWidth: 0
         },
@@ -86,7 +87,7 @@ const GameCanvas = ({ gameScore, setGameScore, setMessage }) => {
       Bodies.rectangle(0, 300, 50, 1000, {
         isStatic: true,
         render: {
-          fillStyle: 'white',
+          fillStyle: 'red',
           strokeStyle: 'white',
           lineWidth: 0
         },
@@ -97,7 +98,7 @@ const GameCanvas = ({ gameScore, setGameScore, setMessage }) => {
       Bodies.rectangle(1440, 400, 50, 800, {
         isStatic: true,
         render: {
-          fillStyle: 'white',
+          fillStyle: 'ref',
           strokeStyle: 'white',
           lineWidth: 0
         },
