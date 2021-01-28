@@ -3,11 +3,12 @@ import { Link } from "react-router-dom";
 const GameOver = ({ gameScore }) => {
   // change trigger above
 
+
   return (
     <div>
       Game Over! Summary
       <div>{gameScore}</div>
-      <button style={{marginTop: "30px" }}>
+      <button style={{ marginTop: "30px" }}>
         <Link to="/Dashboard" className="cta" style={{ color: "white" }}>
           Confirm Score
         </Link>
