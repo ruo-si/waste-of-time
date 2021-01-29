@@ -12,7 +12,7 @@ function Game({ setUserState, userState }) {
     // score state
     const [gameStart, setGameStart] = useState(false);
     const [gameOver, setGameOver] = useState(false);
-    const [timer, setTimer] = useState(5);
+    const [timer, setTimer] = useState(15);
     const [gameScore, setGameScore] = useState(0);
     const [Message, setMessage] = useState("");
 
@@ -52,7 +52,7 @@ function Game({ setUserState, userState }) {
                     console.log("gameover");
                     setGameStart(false);
                     setGameOver(true);
-                    setTimer(5);
+                    setTimer(15);
                 }
             }, 1000);
         }
