@@ -54,7 +54,7 @@ const GameCanvas = ({ setGameScore, setMessage }) => {
         isStatic: true,
         background: false,
         render: {
-          fillStyle: 'red',
+          fillStyle: 'white',
           strokeStyle: 'white',
           lineWidth: 0
         },
@@ -65,7 +65,7 @@ const GameCanvas = ({ setGameScore, setMessage }) => {
       Bodies.rectangle(600, 600, 1800, 50, {
         isStatic: true,
         render: {
-          fillStyle: 'red',
+          fillStyle: 'white',
           strokeStyle: 'white',
           lineWidth: 0
         },
@@ -76,7 +76,7 @@ const GameCanvas = ({ setGameScore, setMessage }) => {
       Bodies.rectangle(600, 430, 1800, 30, {
         isStatic: true,
         render: {
-          fillStyle: 'red',
+          fillStyle: 'white',
           strokeStyle: 'white',
           lineWidth: 0
         },
@@ -87,7 +87,7 @@ const GameCanvas = ({ setGameScore, setMessage }) => {
       Bodies.rectangle(0, 300, 50, 1000, {
         isStatic: true,
         render: {
-          fillStyle: 'red',
+          fillStyle: 'white',
           strokeStyle: 'white',
           lineWidth: 0
         },
@@ -98,7 +98,7 @@ const GameCanvas = ({ setGameScore, setMessage }) => {
       Bodies.rectangle(1440, 400, 50, 800, {
         isStatic: true,
         render: {
-          fillStyle: 'ref',
+          fillStyle: 'white',
           strokeStyle: 'white',
           lineWidth: 0
         },
