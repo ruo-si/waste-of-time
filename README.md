@@ -13,7 +13,7 @@ Navigate through the README Using the Table of Contents :
 ## Installation 
 Waste-Of-Time - When starting the app you run "npm start". We used a user authentication using passport which submit's the users info through a mongo database. By logging into our app you will be presented with your own dashboard where you will be welcomed using "UserState". The Challenge game page we used a physics engine called Matter.js as well as a 3d's max vray to create the game objects.
 ## Usage
-For fun
+
 ## Extensions
 Express
 axios
