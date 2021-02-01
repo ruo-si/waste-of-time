@@ -15,13 +15,13 @@ Waste-Of-Time - When starting the app you run "npm start". We used a user authen
 ## Usage
 
 ## Extensions
-Express
-axios
-MongoDb
-Npm 
-Bootstrap
-React
-Matter.js
+Express,
+Axios,
+MongoDb,
+Npm, 
+Bootstrap,
+React,
+Matter.js,
 Vray
 ## License
 ![badmath](https://img.shields.io/badge/license-undefined-green)
