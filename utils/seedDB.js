@@ -19,7 +19,8 @@ const userSeed =
    status: "second tier",
    gameScore: 180,
 }
-   ;
+   
+
 // const commentsSeeds = [
 //    {
 //       body: "🚀 initial seed",
@@ -32,13 +33,13 @@ const userSeed =
 
 // ];
 
+
 // db.User.deleteMany({})
 //    .then(()=> db.User.create(userSeed))
 //    .catch(err => {
 //       console.log(err),
 //       process.exit(1);
 //    })
-
 
 
 // remove all comments

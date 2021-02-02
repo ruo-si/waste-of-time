@@ -6,9 +6,7 @@ import {
   Switch,
   Redirect,
 } from "react-router-dom";
-// import Comments from "./pages/Dashboard";
-// import { Container } from "./components/Grid";
-// import Comment from "./pages/Comment";
+
 import Login from "./pages/Login";
 import Signup from "./pages/Signup";
 import NoMatch from "./pages/NoMatch";
@@ -17,7 +15,6 @@ import Footer from "./components/Footer";
 import userAPI from "./utils/userAPI";
 // import ProtectedRoute from "./components/ProtectedRoute";
 import Home from "./pages/Home";
-// import TheScene from "./pages/TheScene";
 import TheChallenge from "./pages/TheChallenge";
 import Dashboard from "./pages/Dashboard";
 import BannerQuote from "./components/BannerQuote";
@@ -43,15 +40,6 @@ function App() {
   //   username: "VVV",
   // });
 
-  // const [demoUser, setUserDemo] = useState({
-  //   email: userState.email,
-  //   gameScore: userState.gameScore,
-  //   highScore: userState.highScore,
-  //   name: userState.name,
-  //   status: userState.status,
-  //   username: userState.username,
-  // });
-
   //user authentication
   function authenticate() {
     return userAPI
@@ -65,10 +53,18 @@ function App() {
 
   // console.log(userState)
 
+  // logout user
+  function logout() {
+    console.log("logout");
+    userAPI
+      .logout()
+    //   .then(window.location.href = "/")
+  }
+
   return (
     <Router>
       <BannerQuote />
-      <Head />
+      <Head logout={logout} />
 
       <Switch>
         <Route exact path="/" component={Home} />
@@ -103,8 +99,8 @@ function App() {
           path="/logout"
           authenticate={authenticate}
           user={userState}
-      />
-        
+        />
+
         <Route exact path={["/", "/Dashboard"]}>
           <Dashboard {...userState} />
         </Route>
