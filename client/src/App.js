@@ -40,15 +40,6 @@ function App() {
   //   username: "VVV",
   // });
 
-  // const [demoUser, setUserDemo] = useState({
-  //   email: userState.email,
-  //   gameScore: userState.gameScore,
-  //   highScore: userState.highScore,
-  //   name: userState.name,
-  //   status: userState.status,
-  //   username: userState.username,
-  // });
-
   //user authentication
   function authenticate() {
     return userAPI
